@@ -1,0 +1,53 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "market_research_assist"
+version = "0.0.1"
+description = "A short description of the project."
+authors = [
+  { name = "Sumit Yadav" },
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License"
+]
+dependencies = [
+    "loguru",
+    "pip",
+    "python-dotenv",
+    "pandas",
+    "ruff",
+    "tqdm",
+    "typer",
+    "tweepy",
+    "pyarrow",
+    "praw>=7",
+    "python-dotenv",
+    "rich>=10",
+    "click>=8",
+    "ipykernel",
+    "torch",
+    "transformers",
+    "numpy",
+    "scipy",
+    "streamlit",
+]
+requires-python = "~=3.10.0"
+
+
+[tool.ruff]
+line-length = 99
+src = ["market_research_assist"]
+include = ["pyproject.toml", "market_research_assist/**/*.py"]
+
+[tool.ruff.lint]
+extend-select = ["I"]  # Add import sorting
+
+[tool.ruff.lint.isort]
+known-first-party = ["market_research_assist"]
+force-sort-within-sections = true
+
