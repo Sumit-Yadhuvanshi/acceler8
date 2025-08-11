@@ -35,6 +35,9 @@ dependencies = [
     "numpy",
     "scipy",
     "streamlit",
+    "wordcloud",
+    "dash",
+    "dash-bootstrap-components",
 ]
 requires-python = "~=3.10.0"
 

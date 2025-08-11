@@ -135,24 +135,24 @@ def main(tag: str, limit: int):
     save_to_csv(all_data, filename=csv_path)
     # ----------------------------------------
 
+    # For Local testing
+    # table = Table(title=f"Social Media Feed for Tag: #{tag}")
+    # table.add_column("Source", style="cyan")
+    # table.add_column("Author", style="magenta")
+    # table.add_column("Content", style="green", overflow="fold")
+    # table.add_column("Link", style="blue")
 
-    table = Table(title=f"Social Media Feed for Tag: #{tag}")
-    table.add_column("Source", style="cyan")
-    table.add_column("Author", style="magenta")
-    table.add_column("Content", style="green", overflow="fold")
-    table.add_column("Link", style="blue")
-
-    for item in all_data:
-        comments_text = ""
-        if item.get("comments"):
-            comments_text = "\n".join(
-                [f"{c['author']}: {c['text']}" for c in item["comments"]]
-            )
-        content = item["text"]
-        if comments_text:
-            content += f"\n[Comments:]\n{comments_text}"
-        table.add_row(item["source"], item["author"], content, f"[link={item['url']}]link[/link]")
-    console.print(table)
+    # for item in all_data:
+    #     comments_text = ""
+    #     if item.get("comments"):
+    #         comments_text = "\n".join(
+    #             [f"{c['author']}: {c['text']}" for c in item["comments"]]
+    #         )
+    #     content = item["text"]
+    #     if comments_text:
+    #         content += f"\n[Comments:]\n{comments_text}"
+    #     table.add_row(item["source"], item["author"], content, f"[link={item['url']}]link[/link]")
+    # console.print(table)
 
 if __name__ == "__main__":
     main()
